@@ -33,7 +33,7 @@ function build_u-boot() {
 	make nanopi_neo2_defconfig
 	make CROSS_COMPILE=aarch64-linux-gnu- -j$BUILD_CPUS
 
-	cd $CUR_DIR
+	cd $CUR_DIR/misc
 	mkimage -C none -A arm -T script -d boot.cmd boot.scr
 }
 
@@ -44,7 +44,7 @@ function copy_u-boot_files() {
 	cp spl/sunxi-spl.bin $TARGET_DIR
 	cp u-boot.itb $TARGET_DIR
 
-	cp $CUR_DIR/boot.scr $TARGET_DIR
+	cp $CUR_DIR/misc/boot.scr $TARGET_DIR
 }
 
 check_toolchain
