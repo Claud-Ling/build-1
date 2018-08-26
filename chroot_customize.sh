@@ -38,7 +38,7 @@ EOT
 
 	echo tinyDebian > /etc/hostname
 
-	echo root:password | chpasswd
+	echo root:tinyDebian | chpasswd
 
 	# misc
 	echo "" >> /root/.bashrc
